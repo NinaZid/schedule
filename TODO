@@ -1,1 +1,6 @@
-1. Check if user exists already on registration.
+TASKS:
+1. Check if user already exists on registration.
+
+
+BUGS:
+1. Status prints on the form and on up-left corner. It should print only on the form.

@@ -20,5 +20,5 @@ if(isset($_POST['register-btn'])){
 
 // Print the status
 if(isset($status)):
-    echo $status;
+    return $status;
 endif;

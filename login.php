@@ -1,7 +1,7 @@
 <?php
 //just checking
 include "database.php";
-
+//TEST
 session_start();
 
 // Login button

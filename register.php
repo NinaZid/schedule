@@ -3,11 +3,18 @@ include "database.php";
 
 session_start();
 
+$con = connection();
+
 // Register button
 if(isset($_POST['register-btn'])){
     if(!($_POST['password'] === $_POST['passwordRe'])){
         $status = "Password doesn't match.";
-    }else{
+    } elseif(($result = $con->query("SELECT * FROM users WHERE  username = '" .$_POST['username']. "'"))) {
+        if($result-> rowCount() > 0) {
+            $status = "This username already exists.";
+        }
+    }
+    else{
         $status = register($_POST['username'], $_POST['password']);
     }
 }

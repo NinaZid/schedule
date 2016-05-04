@@ -1,26 +1,14 @@
 <?php
+
 include "config.php";
 
 $status="";
 
-// Read tasks from DB
-function readTasks(){
-    $con = connection();
-    $data=[];
-
-    if ($result = $con->query("SELECT * FROM tasks")) {
-        while($row = $result->fetch(PDO::FETCH_ASSOC)) {
-            $data[$row['day'].'_'.$row['hour']]=$row;
-        }
-    }
-    return $data;
-}
-
 // Insert task in DB
-function insertTask($day, $hour, $priority, $name){
+function insertTask($day, $hour, $priority, $name, $id){
     $con = connection();
 
-    $result = $con->query("INSERT INTO tasks (`day`, `hour`, `priority`, `name`) VALUES (".$day.",".$hour.",'".$priority."','".$name."' )");
+    $result = $con->query("INSERT INTO tasks (`day`, `hour`, `priority`, `name`, `user_id`) VALUES (".$day.",".$hour.",'".$priority."','".$name."', '".$id."')");
 }
 
 // Login with username and password executed from DB
@@ -34,9 +22,11 @@ function login($username, $password){
         if($username == $row['username'] && $password == $row['password']){
             //correct
             //login + set session
+            $id = $row['id'];
             $_SESSION['username'] = $username;
-
+            $_SESSION['id'] = $id;
             header("Location: calendar.html"); //redirect
+
             $status = "";
         }
         else {
@@ -50,7 +40,7 @@ function login($username, $password){
 function register($username, $password){
     $con = connection();
 
-    $result = $con->query("INSERT INTO users (`username`, `password`, `role`) VALUES ('".$username."', '".$password."', '1')");
+    $result = $con->query("INSERT INTO users (`username`, `password`, `role`) VALUES ('".$username."', '".$password."', '2')");
 
     $status = "User successfully created!";
     return $status;
@@ -61,6 +51,20 @@ if(isset($_POST['add_task'])){
     $hour = $_POST['hour_select'];
     $priority = $_POST['info_select'];
     $name = $_POST['text_description'];
+    $id = $_SESSION['id'];
 
-    insertTask($day, $hour, $priority, $name);
+    insertTask($day, $hour, $priority, $name, $id);
+}
+
+// Get all tasks by session id
+function getTasksById($id){
+    $con = connection();
+    $data=[];
+
+    if ($result = $con->query("SELECT * FROM tasks WHERE user_id = '.$id.'")) {
+        while($row = $result->fetch(PDO::FETCH_ASSOC)) {
+            $data[$row['day'].'_'.$row['hour']]=$row;
+        }
+    }
+    return $data;
 }

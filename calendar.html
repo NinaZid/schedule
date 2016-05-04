@@ -46,7 +46,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="calendar.html"><?php echo ucwords($_SESSION['username']); ?></a>
+                            <a href="calendar.html"><?php echo ucwords($_SESSION['username']); ?></a>
                     </li>
                     <li>
                         <a href="logout.php">Logout</a>
@@ -61,12 +61,6 @@
     <!-- Page Content -->
     <div class="container">
 
-        <!--<div class="row">-->
-            <!--<div class="col-lg-12 text-center">-->
-                <!--<h1>Hello, <?php echo $_SESSION['username']; ?> </h1>-->
-            <!--</div>-->
-        <!--</div>-->
-
         <div class="col-lg-4" id="enterTasks">
             <div class="form-box">
                 <div class="form-top">
@@ -78,6 +72,7 @@
                     </div>
                 </div>
                 <div class="form-bottom">
+                    <!--<?php echo $_SESSION['id']; ?>-->
                     <form role="form" action="" method="post" class="login-form">
                         <div class="form-group">
                           <label class="" for="">Day:</label>
@@ -135,7 +130,7 @@
                 </thead>
                 <tbody>
                 <?php
-                $data=readTasks();
+                $data=getTasksById($_SESSION['id']);
                 foreach (range(9,17) as $hour){ ?>
                   <tr class="">
                       <!--vo foreach se vrtat casovite i denovite vo format 1_9-->

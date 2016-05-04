@@ -1,8 +1,7 @@
 <?php
-//just checking
-include "database.php";
-//TEST
 session_start();
+
+include "database.php";
 
 // Login button
 if(isset($_POST['login-btn'])){

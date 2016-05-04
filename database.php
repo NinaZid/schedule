@@ -1,5 +1,5 @@
 <?php
-
+//test comment
 include "config.php";
 
 $status="";

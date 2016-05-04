@@ -1,6 +1,7 @@
 TASKS:
-1. Check if user already exists on registration.
-
+1. Check if user already exists on registration. [✓]
+2. Check if user have any tasks for itself when the function 'ReadTasksById' it's called
+3. Add new page 'admin.html' that can be showed only for admins, not normal users.
 
 BUGS:
-1. Status prints on the form and on up-left corner. It should print only on the form.
+1. Status prints on the form and on up-left corner. It should print only on the form. [✓]

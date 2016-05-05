@@ -2,6 +2,14 @@ TASKS:
 1. Check if user already exists on registration. [✓]
 2. Check if user have any tasks for itself when the function 'ReadTasksById' it's called
 3. Add new page 'admin.html' that can be showed only for admins, not normal users.
+4. Admin should see all users in his page and by clicking on them it should show him all tasks of the chosen user.
+5. Admin can edit any user`s tasks.
+6. Any normal user can check and edit only his own tasks.
+7. If users tries to check others users`s tasks, he will be returned to his page with warning information.
+8. Add status information for successfully/failed added task.
+9. Change 'Calendar.html' design.
+10. Remove fixed attribute for copyright status.
+11. Add options for mobile and tablet resolutions.
 
 BUGS:
 1. Status prints on the form and on up-left corner. It should print only on the form. [✓]

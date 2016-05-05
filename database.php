@@ -1,5 +1,4 @@
 <?php
-//test comment
 include "config.php";
 
 $status="";
@@ -20,7 +19,6 @@ function login($username, $password){
     while($row = $result->fetch(PDO::FETCH_ASSOC))
     {
         if($username == $row['username'] && $password == $row['password']){
-            //correct
             //login + set session
             $id = $row['id'];
             $_SESSION['username'] = $username;

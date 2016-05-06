@@ -6,9 +6,9 @@ TASKS:
 5. Admin can edit any user`s tasks.
 6. Any normal user can check and edit only his own tasks.
 7. If users tries to check others users`s tasks, he will be returned to his page with warning information.
-8. Add status information for successfully/failed added task.
+8. Add status information for successfully/failed added task. [✓]
 9. Change 'Calendar.html' design.
-10. Remove fixed attribute for copyright status.
+10. Remove fixed attribute for copyright status. [✓]
 11. Add options for mobile and tablet resolutions.
 
 BUGS:

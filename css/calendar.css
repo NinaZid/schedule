@@ -50,6 +50,12 @@ td, th {
     background-color: lightgrey;
 }
 
+#status {
+    color: #096fbc;
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+
 table {
     -webkit-box-shadow: 0px 0px 4px 4px rgba(0,0,0,0.05);
     -moz-box-shadow: 0px 0px 4px 4px rgba(0,0,0,0.05);
@@ -69,8 +75,6 @@ table {
 }
 
 footer {
-    position:fixed;
-    bottom:0;
-    right:0;
+    float: right;
     color: black;
 }

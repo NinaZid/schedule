@@ -8,6 +8,10 @@ function insertTask($day, $hour, $priority, $name, $id){
     $con = connection();
 
     $result = $con->query("INSERT INTO tasks (`day`, `hour`, `priority`, `name`, `user_id`) VALUES (".$day.",".$hour.",'".$priority."','".$name."', '".$id."')");
+    if(isset($result)){
+        $status = "Your task has been successfully added.";
+    }
+    return $status;
 }
 
 // Login with username and password executed from DB
@@ -51,7 +55,7 @@ if(isset($_POST['add_task'])){
     $name = $_POST['text_description'];
     $id = $_SESSION['id'];
 
-    insertTask($day, $hour, $priority, $name, $id);
+    $status = insertTask($day, $hour, $priority, $name, $id);
 }
 
 // Get all tasks by session id

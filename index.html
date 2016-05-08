@@ -44,7 +44,7 @@
                             <label class="sr-only" for="password">Password</label>
                             <input type="password" name="password" placeholder="Password..." class="form-password form-control" id="form-password">
                         </div>
-                        <p id="status"><?php echo $status ?></p>
+                        <p id="status"><?php if(isset($status)) echo $status ?></p>
                         <button type="submit" class="btn" id="loginBtn" name="login-btn">Log in</button>
                         <hr class="style">
                         <p class="otherText">Don't have user? Create one now:</p>

@@ -23,14 +23,12 @@ function login($username, $password){
     while($row = $result->fetch(PDO::FETCH_ASSOC))
     {
         if($username == $row['username'] && $password == $row['password']){
+            //login + set session
             $id = $row['id'];
             $_SESSION['username'] = $username;
             $_SESSION['id'] = $id;
-            if ($row['role_id'] == 1){
-                header("Location: admin.html");
-            }else{
-                header("Location: calendar.html");
-            }
+            header("Location: calendar.html"); //redirect
+
             $status = "";
         }
         else {

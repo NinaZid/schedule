@@ -13,4 +13,4 @@ TASKS:
 
 BUGS:
 1. Status prints on the form and on up-left corner. It should print only on the form. [✓]
-2. Huge bug on registering new user. Can`t register a new one.
+2. Huge bug on registering new user. Can`t register a new one. [✓]

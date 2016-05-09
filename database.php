@@ -42,7 +42,7 @@ function login($username, $password){
 function register($username, $password){
     $con = connection();
 
-    $result = $con->query("INSERT INTO users (`username`, `password`, `role`) VALUES ('".$username."', '".$password."', '2')");
+    $result = $con->query("INSERT INTO users (`username`, `password`, `role_id` ) VALUES ('".$username."', '".$password."', '2')");
 
     $status = "User successfully created!";
     return $status;

@@ -26,6 +26,7 @@ function login($username, $password){
             $id = $row['id'];
             $_SESSION['username'] = $username;
             $_SESSION['id'] = $id;
+            $_SESSION['role_id'] = $row['role_id'];
             if ($row['role_id'] == 1){
                 header("Location: admin.html");
             }else{

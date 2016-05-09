@@ -1,4 +1,7 @@
 <?php session_start(); ?>
+<?php if ( $_SESSION['role_id'] != 2){
+ header("Location: admin.html");
+} ?>
 <?php include "check.php"; ?>
 <?php include "database.php"; ?>
 

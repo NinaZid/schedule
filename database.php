@@ -72,3 +72,32 @@ function getTasksById($id){
     }
     return $data;
 }
+
+// Get all users
+function getUsers(){
+    $con = connection();
+    $data=[];
+
+    $result = $con->query("SELECT * FROM users");
+    while($row = $result->fetch(PDO::FETCH_ASSOC)) {
+        $id = $row['id'];
+        $username = $row['username'];
+        $password = $row['password'];
+        $roleId = $row['role_id'];
+
+        echo '<div id="user">';
+        echo '<h1 class="sign-up-title">THIS USER HAS ID: '.$id.'</h1>';
+//        echo '<label>ID:</label>';
+//        echo "<input type=\"text\" class=\"form-text form-control\" id=\"form-text\" name=\"username\" value=\"$id\" disabled>";
+        echo '<label>Username:</label>';
+        echo "<input type=\"text\" class=\"form-text form-control\" id=\"form-text\" name=\"username\" value=\"$username\">";
+        echo '<label>Password:</label>';
+        echo "<input type=\"text\" class=\"form-text form-control\" id=\"form-text\" name=\"username\" value=\"$password\">";
+        echo '<label>Role ID:</label>';
+        echo '<select class="form-control" name="hour_select">
+                  <option value="1" '.($roleId==1?'selected':'').'>Admin</option>
+                  <option value="2" '.($roleId==2?'selected':'').'>User</option>
+              </select>';
+        echo '</div>';
+    }
+}

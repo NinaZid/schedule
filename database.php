@@ -24,6 +24,8 @@ function login($username, $password){
     {
         if($username == $row['username'] && $password == $row['password']){
             $id = $row['id'];
+            $_SESSION['first_name'] = $row['first_name'];
+            $_SESSION['last_name'] = $row['last_name'];
             $_SESSION['username'] = $username;
             $_SESSION['id'] = $id;
             $_SESSION['role_id'] = $row['role_id'];
@@ -42,10 +44,10 @@ function login($username, $password){
 }
 
 // Register new user
-function register($username, $password){
+function register($firstName, $lastName, $username, $password){
     $con = connection();
 
-    $result = $con->query("INSERT INTO users (`username`, `password`, `role_id` ) VALUES ('".$username."', '".$password."', '2')");
+    $result = $con->query("INSERT INTO users (`first_name`, `last_name`,`username`, `password`, `role_id` ) VALUES ('".$firstName."','".$lastName."','".$username."', '".$password."', '2')");
 
     $status = "User successfully created!";
     return $status;
@@ -77,28 +79,25 @@ function getTasksById($id){
 // Get all users
 function getUsers(){
     $con = connection();
-    $data=[];
 
     $result = $con->query("SELECT * FROM users");
     while($row = $result->fetch(PDO::FETCH_ASSOC)) {
         $id = $row['id'];
+        $firstName = $row['first_name'];
+        $lastName = $row['last_name'];
         $username = $row['username'];
         $password = $row['password'];
         $roleId = $row['role_id'];
 
-        echo '<div id="user">';
-        echo '<h1 class="sign-up-title">THIS USER HAS ID: '.$id.'</h1>';
-//        echo '<label>ID:</label>';
-//        echo "<input type=\"text\" class=\"form-text form-control\" id=\"form-text\" name=\"username\" value=\"$id\" disabled>";
-        echo '<label>Username:</label>';
-        echo "<input type=\"text\" class=\"form-text form-control\" id=\"form-text\" name=\"username\" value=\"$username\">";
-        echo '<label>Password:</label>';
-        echo "<input type=\"text\" class=\"form-text form-control\" id=\"form-text\" name=\"username\" value=\"$password\">";
-        echo '<label>Role ID:</label>';
-        echo '<select class="form-control" name="hour_select">
-                  <option value="1" '.($roleId==1?'selected':'').'>Admin</option>
-                  <option value="2" '.($roleId==2?'selected':'').'>User</option>
-              </select>';
+        echo '<div class="user" id="'.$id.'" data-toggle="modal" data-target="#myModal">';
+        echo "<h1 class='name-of-user'>$firstName $lastName</h1>";
+//        echo '<label>Password:</label>';
+//        echo "<input type=\"text\" class=\"form-text form-control\" id=\"form-text\" name=\"username\" value=\"$password\">";
+//        echo '<label>Role ID:</label>';
+//        echo '<select class="form-control" name="hour_select">
+//                  <option value="1" '.($roleId==1?'selected':'').'>Admin</option>
+//                  <option value="2" '.($roleId==2?'selected':'').'>User</option>
+//              </select>';
         echo '</div>';
     }
 }

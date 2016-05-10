@@ -38,7 +38,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                            <a href="calendar.html"><?php echo ucwords($_SESSION['username']); ?></a>
+                            <a href="calendar.html"><?php echo ucwords($_SESSION['first_name'] . ' ' . $_SESSION['last_name']); ?></a>
                     </li>
                     <li>
                         <a href="logout.php">Logout</a>

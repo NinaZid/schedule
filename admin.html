@@ -1,13 +1,9 @@
 <?php session_start(); ?>
-<<<<<<< HEAD
 <?php include "admin.php"; ?>
-
-=======
 <?php if ( $_SESSION['role_id'] != 1){
 header("Location: calendar.html");
 }
 ?>
->>>>>>> origin/dev
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,7 +37,7 @@ header("Location: calendar.html");
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="calendar.html"><?php echo ucwords($_SESSION['username']); ?></a>
+                    <a href="calendar.html"><?php echo ucwords($_SESSION['first_name'] . ' ' . $_SESSION['last_name']); ?></a>
                 </li>
                 <li>
                     <a href="logout.php">Logout</a>
@@ -55,6 +51,43 @@ header("Location: calendar.html");
 <div class="container">
     <?php getUsers(); ?>
 </div>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">User info</h4>
+            </div>
+            <div class="modal-body">
+                <label>First Name:</label>
+                <input type="text" class="form-text form-control" id="first-name" name="first-name" value="<?php echo ucwords($_SESSION['first_name']); ?>" />
+                <label>Last Name:</label>
+                <input type="text" class="form-text form-control" id="last-name" name="last-name" value="<?php echo ucwords($_SESSION['last_name']); ?>"/>
+                <label>Username:</label>
+                <input type="text" class="form-text form-control" id="username" name="username">
+                <label>Password:</label>
+                <input type="text" class="form-text form-control" id="password" name="password">
+                <label>Role ID:</label>
+                <select class="form-control" name="hour_select">
+                    <option value="1">Admin</option>
+                    <option value="2">User</option>
+                </select>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">View Task</button>
+                <button type="button" class="btn btn-warning" data-dismiss="modal">Update</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Delete</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 </body>

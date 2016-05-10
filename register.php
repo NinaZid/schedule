@@ -16,7 +16,7 @@ if(isset($_POST['register-btn'])){
         }
         else
         {
-            $status = register($_POST['username'], $_POST['password']);
+            $status = register($_POST['first-name'], $_POST['last-name'], $_POST['username'], $_POST['password']);
         }
     }
 }

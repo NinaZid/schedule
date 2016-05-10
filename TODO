@@ -5,17 +5,18 @@ TASKS:
 4. Admin should see all users in his page by first and last name and by clicking on them it should show him a modal with buttons for edit, delete, view the users tasks and close button. [✓]
 5. Admin can edit any user`s tasks.
 6. Admin can change the info of any user.
-7. Any normal user doesn`t have access to admin page. [✓]
-8. Admin doesen`t have access to calendar page. [✓]
-9. Add status information for successfully/failed added task. [✓]
-10. Add exit effect on $status for 5-10 seconds.
-11. Change 'Calendar.html' design.
-11. Remove fixed attribute for copyright status. [✓]
-13. Add options for mobile and tablet resolutions.
-14. Added new fields on register page for first and last name. [✓]
-15. Completely changed the admin page structure. [✓]
-16. On the menu bar change the username into first and last name. [✓]
-17. Sort users in admin page by first name alphabetically.
+7. Admin can delete any user. [✓]
+8. Any normal user doesn`t have access to admin page. [✓]
+9. Admin doesen`t have access to calendar page. [✓]
+10. Add status information for successfully/failed added task. [✓]
+11. Add exit effect on $status for 5-10 seconds.
+12. Change 'Calendar.html' design.
+13. Remove fixed attribute for copyright status. [✓]
+14. Add options for mobile and tablet resolutions.
+15. Added new fields on register page for first and last name. [✓]
+16. Completely changed the admin page structure. [✓]
+17. On the menu bar change the username into first and last name. [✓]
+18. Sort users in admin page by first name alphabetically.
 
 
 BUGS:

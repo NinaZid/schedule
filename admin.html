@@ -71,7 +71,7 @@ header("Location: calendar.html");
                 <label>Password:</label>
                 <input type="text" class="form-text form-control" id="password" name="password">
                 <label>Role ID:</label>
-                <select class="form-control" name="hour_select">
+                <select class="form-control" name="role_select" id="role">
                     <option value="1">Admin</option>
                     <option value="2">User</option>
                 </select>
@@ -79,7 +79,7 @@ header("Location: calendar.html");
             <div class="modal-footer">
                 <button type="button" class="btn btn-info" data-dismiss="modal" name="view-tasks-btn">View Task</button>
                 <button type="button" class="btn btn-warning" data-dismiss="modal" name="update-btn">Update</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal" name="delete-btn">Delete</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" name="delete-btn" id="delete-user">Delete</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -89,5 +89,6 @@ header("Location: calendar.html");
 
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script>
 </body>
 </html>

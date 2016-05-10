@@ -89,7 +89,7 @@ function getUsers(){
         $password = $row['password'];
         $roleId = $row['role_id'];
 
-        echo '<div class="user" name="user-id" id="'.$id.'" data-toggle="modal" data-target="#myModal">';
+        echo '<div class="user" name="user-id" id="user_'.$id.'" data-toggle="modal" data-target="#myModal" data-data=\''.json_encode($row).'\'>';
         echo "<h1 class='name-of-user'>$firstName $lastName</h1>";
         echo '</div>';
     }

@@ -43,16 +43,6 @@ function login($username, $password){
     return $status;
 }
 
-// Register new user
-function register($firstName, $lastName, $username, $password){
-    $con = connection();
-
-    $result = $con->query("INSERT INTO users (`first_name`, `last_name`,`username`, `password`, `role_id` ) VALUES ('".$firstName."','".$lastName."','".$username."', '".$password."', '2')");
-
-    $status = "User successfully created!";
-    return $status;
-}
-
 if(isset($_POST['add_task'])){
     $day = $_POST['day_select'];
     $hour = $_POST['hour_select'];
@@ -61,6 +51,16 @@ if(isset($_POST['add_task'])){
     $id = $_SESSION['id'];
 
     $status = insertTask($day, $hour, $priority, $name, $id);
+}
+
+// Register new user
+function register($firstName, $lastName, $username, $password){
+    $con = connection();
+
+    $result = $con->query("INSERT INTO users (`first_name`, `last_name`,`username`, `password`, `role_id` ) VALUES ('".$firstName."','".$lastName."','".$username."', '".$password."', '2')");
+
+    $status = "User successfully created!";
+    return $status;
 }
 
 // Get all tasks by session id
@@ -89,15 +89,22 @@ function getUsers(){
         $password = $row['password'];
         $roleId = $row['role_id'];
 
-        echo '<div class="user" id="'.$id.'" data-toggle="modal" data-target="#myModal">';
+        echo '<div class="user" name="user-id" id="'.$id.'" data-toggle="modal" data-target="#myModal">';
         echo "<h1 class='name-of-user'>$firstName $lastName</h1>";
-//        echo '<label>Password:</label>';
-//        echo "<input type=\"text\" class=\"form-text form-control\" id=\"form-text\" name=\"username\" value=\"$password\">";
-//        echo '<label>Role ID:</label>';
-//        echo '<select class="form-control" name="hour_select">
-//                  <option value="1" '.($roleId==1?'selected':'').'>Admin</option>
-//                  <option value="2" '.($roleId==2?'selected':'').'>User</option>
-//              </select>';
         echo '</div>';
     }
+}
+
+// Delete user
+function deleteUser($id){
+    $con = connection();
+
+    $result = $con->query("DELETE FROM users WHERE id = $id");
+}
+
+// Update user
+function updateUser($id, $firstName, $lastName, $username, $password, $roleId){
+    $con = connection();
+
+    $result = $con->query("UPDATE users SET first_name=$firstName, last_name=$lastName, username=$username, password=$password, role_id=$roleId WHERE id=$id");
 }

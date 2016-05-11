@@ -16,10 +16,9 @@ TASKS:
 15. Added new fields on register page for first and last name. [✓]
 16. Completely changed the admin page structure. [✓]
 17. On the menu bar change the username into first and last name. [✓]
-18. Sort users in admin page by first name alphabetically.
-
+18. Sort users in admin page by first name alphabetically. [✓]
 
 BUGS:
 1. Status prints on the form and on up-left corner. It should print only on the form. [✓]
 2. Huge bug on registering new user. Can`t register a new one. [✓]
-3. On deleting users, if the user doesn`t have tasks - can be deleted, but if the user has tasks - it is not deleted.
+3. On deleting users, if the user doesn`t have tasks - can be deleted, but if the user has tasks - it is not deleted. [✓]

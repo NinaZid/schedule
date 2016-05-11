@@ -80,7 +80,7 @@ function getTasksById($id){
 function getUsers(){
     $con = connection();
 
-    $result = $con->query("SELECT * FROM users");
+    $result = $con->query("SELECT * FROM users ORDER BY first_name");
     while($row = $result->fetch(PDO::FETCH_ASSOC)) {
         $id = $row['id'];
         $firstName = $row['first_name'];

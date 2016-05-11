@@ -99,6 +99,7 @@ function getUsers(){
 function deleteUser($id){
     $con = connection();
 
+    $result = $con->query("DELETE FROM tasks WHERE user_id = $id");
     $result = $con->query("DELETE FROM users WHERE id = $id");
 }
 

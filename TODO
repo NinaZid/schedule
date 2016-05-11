@@ -4,7 +4,7 @@ TASKS:
 3. Add new page 'admin.html' that can be showed only for admins, not normal users. [✓]
 4. Admin should see all users in his page by first and last name and by clicking on them it should show him a modal with buttons for edit, delete, view the users tasks and close button. [✓]
 5. Admin can edit any user`s tasks.
-6. Admin can change the info of any user.
+6. Admin can change the info of any user. [✓]
 7. Admin can delete any user. [✓]
 8. Any normal user doesn`t have access to admin page. [✓]
 9. Admin doesen`t have access to calendar page. [✓]

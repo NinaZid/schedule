@@ -107,5 +107,5 @@ function deleteUser($id){
 function updateUser($id, $firstName, $lastName, $username, $password, $roleId){
     $con = connection();
 
-    $result = $con->query("UPDATE users SET first_name=$firstName, last_name=$lastName, username=$username, password=$password, role_id=$roleId WHERE id=$id");
+    $result = $con->query("UPDATE users SET first_name='$firstName', last_name='$lastName', username='$username', password='$password', role_id='$roleId' WHERE id=$id");
 }

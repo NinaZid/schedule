@@ -1,6 +1,3 @@
-/**
- * Created by Nina on 10.05.2016.
- */
 jQuery(function(){
     $('.user').click(function(){
         var info=$(this).data('data');
@@ -18,8 +15,10 @@ jQuery(function(){
 
 
         $('#delete-user').attr('data-id', info.id);
+        $('#update-user').attr('data-id', info.id);
     });
 
+    //delete user
     $('#delete-user').click(function(){
        var id=$(this).attr('data-id');
 
@@ -30,4 +29,24 @@ jQuery(function(){
             $('#user_'+id).remove();
         });
     });
+
+
+    //update user info
+    $('#update-user').click(function(){
+        var id=$(this).attr('data-id');
+
+        $.post('/schedule/update_user.php',
+            {
+                id: id,
+                first_Name: $('#first-name').val(),
+                last_Name: $('#last-name').val(),
+                username: $('#username').val(),
+                password: $('#password'). val(),
+                role_id: $('#role').val()
+            }, function(){
+            console.log('user updated');
+                $('#user_'+id+' h1').html($('#first-name').val()+' '+$('#last-name').val());
+        });
+    });
+
 });

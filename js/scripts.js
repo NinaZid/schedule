@@ -1,4 +1,5 @@
 jQuery(function(){
+
     // Update user info in Admin.html
     $('.user').click(function(){
         var info=JSON.parse($(this).attr('data-data'));
@@ -15,7 +16,7 @@ jQuery(function(){
             $('#role option[value=1]').removeAttr('selected');
         }
 
-
+        $('#view-user-tasks').attr('data-id', info.id);
         $('#delete-user').attr('data-id', info.id);
         $('#update-user').attr('data-id', info.id);
     });
@@ -30,7 +31,7 @@ jQuery(function(){
         $('#update-user').attr('data-id', info.id);
     });
 
-    //delete user
+    // Delete user
     $('#delete-user').click(function(){
        var id=$(this).attr('data-id');
 
@@ -43,7 +44,7 @@ jQuery(function(){
     });
 
 
-    //update user info
+    // Update user info
     $('#update-user').click(function(){
         var id=$(this).attr('data-id');
 
@@ -67,4 +68,18 @@ jQuery(function(){
         });
     });
 
+    // View user tasks
+    $('#view-user-tasks').click(function(){
+        var id=$(this).attr('data-id');
+
+        $.post('/schedule/user.php',
+            {
+                id: id,
+                first_Name: $('#first-name').val(),
+                last_Name: $('#last-name').val()
+            }, function(){
+                window.location.replace("http://localhost/schedule/user.html?user="+id);
+                console.log(id);
+            });
+    });
 });

@@ -1,7 +1,8 @@
 jQuery(function(){
     // Update user info in Admin.html
     $('.user').click(function(){
-        var info=$(this).data('data');
+        var info=JSON.parse($(this).attr('data-data'));
+        console.log(info);
         $('#first-name').val(info.first_name);
         $('#last-name').val(info.last_name);
         $('#username').val(info.username);
@@ -54,9 +55,15 @@ jQuery(function(){
                 username: $('#username').val(),
                 password: $('#password'). val(),
                 role_id: $('#role').val()
-            }, function(){
+            }, function(data){
             console.log('user updated');
-                $('#user_'+id+' h1').html($('#first-name').val()+' '+$('#last-name').val());
+
+                if ($('#role').val()==1) {
+                    $('#user_' + id + ' h1').html($('#first-name').val() + ' ' + $('#last-name').val() + ' ' + '<img src="img/star.png" alt="Admin Icon" id="admin-icon">');
+                } else{
+                    $('#user_'+id+' h1').html($('#first-name').val()+' '+$('#last-name').val());
+                }
+                $('#user_'+id).attr('data-data', data);
         });
     });
 

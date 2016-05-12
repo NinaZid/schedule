@@ -24,4 +24,4 @@ BUGS:
 1. Status prints on the form and on up-left corner. It should print only on the form. [✓]
 2. Huge bug on registering new user. Can`t register a new one. [✓]
 3. On deleting users, if the user doesn`t have tasks - can be deleted, but if the user has tasks - it is not deleted. [✓]
-4. On updating user info, the page must be reloaded with new changes.
+4. On updating user info, the page must be reloaded with new changes. [✓]

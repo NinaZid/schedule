@@ -85,12 +85,13 @@ function getUsers(){
         $id = $row['id'];
         $firstName = $row['first_name'];
         $lastName = $row['last_name'];
-        $username = $row['username'];
-        $password = $row['password'];
         $roleId = $row['role_id'];
 
+        $img = '';
+        if ($roleId == 1) $img = '<img src="img/star.png" alt="Admin Icon" id="admin-icon">';
+
         echo '<div class="user" name="user-id" id="user_'.$id.'" data-toggle="modal" data-target="#myModal" data-data=\''.json_encode($row).'\'>';
-        echo "<h1 class='name-of-user'>$firstName $lastName</h1>";
+        echo "<h1 class='name-of-user'>$firstName $lastName $img</h1>";
         echo '</div>';
     }
 }

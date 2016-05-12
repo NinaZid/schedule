@@ -1,4 +1,5 @@
 jQuery(function(){
+    // Update user info in Admin.html
     $('.user').click(function(){
         var info=$(this).data('data');
         $('#first-name').val(info.first_name);
@@ -15,6 +16,16 @@ jQuery(function(){
 
 
         $('#delete-user').attr('data-id', info.id);
+        $('#update-user').attr('data-id', info.id);
+    });
+
+    // Update user info in Calendar.html
+    $('.user-info').click(function(){
+        var info=$(this).data('data');
+        $('#first-name').val(info.first_name);
+        $('#last-name').val(info.last_name);
+        $('#password').val(info.password);
+
         $('#update-user').attr('data-id', info.id);
     });
 

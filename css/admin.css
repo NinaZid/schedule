@@ -49,19 +49,6 @@ body {
     padding-top: 10px;
 }
 
-/*.edit-form {*/
-    /*margin: 0 auto;*/
-    /*width: 20%;*/
-    /*padding: 15px;*/
-/*}*/
-
-/*#edit-button {*/
-    /*width: 100%;*/
-    /*background-color: #096fbc;*/
-    /*color: white;*/
-    /*border-radius: 5px;*/
-/*}*/
-
-/*#edit-button:hover {*/
-    /*background-color: #0768b7;*/
-/*}*/
+#admin-icon {
+    float: right;
+}

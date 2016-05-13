@@ -131,11 +131,13 @@
                       <?php foreach (range(1,5) as $day){?>
                       <td <?php if(isset($data[$day."_".$hour])){
                                    if($data[$day."_".$hour]['priority'] == 'Danger')
-                                   { echo  'class="danger"';}
+                                   { echo  'class="danger task"';}
                                    elseif ($data[$day."_".$hour]['priority'] == 'Success')
-                                   { echo 'class="success"';}
+                                   { echo 'class="success task"';}
                                    else
-                                   { echo 'class="info"';}}
+                                   { echo 'class="info task"';}
+                                   echo ' data-id="'.$data[$day."_".$hour]['id'].'" ';
+                                   }
                             ?> >
                       <?php
                       if(isset($data[$day."_".$hour])){

@@ -90,8 +90,12 @@ jQuery(function(){
         window.location="/schedule/user.html?user="+id;
     });
 
-    // $('body').on('click','#test', function() {
-    //
-    // });
-    
+     $('body').on('click','.task', function() {
+         var id=$(this).attr('data-id');
+
+         $.get('/schedule/get_task.php?id='+id, function(data){
+
+         });
+     });
+
 });

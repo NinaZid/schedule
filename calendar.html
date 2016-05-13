@@ -168,7 +168,10 @@
                     <label>Last Name:</label>
                     <input type="text" class="form-text form-control" id="last-name" name="last-name" value="<?php echo $info['lastName']; ?>">
                     <label>Password:</label>
+                    <div class="password">
                     <input type="password" class="form-text form-control" id="password" name="password" value="<?php echo $info['password']; ?>">
+                    <span class="glyphicon glyphicon-eye-open"></span>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-warning" data-dismiss="modal" name="update-btn" id="update-user-info">Update</button>

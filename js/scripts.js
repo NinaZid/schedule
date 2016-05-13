@@ -1,4 +1,14 @@
 jQuery(function(){
+    $(".glyphicon-eye-open").show();
+
+    // Show/Hide password on holding mouse down
+    $(".glyphicon-eye-open").mousedown(function(){
+        $("#password").attr('type','text');
+    }).mouseup(function(){
+        $("#password").attr('type','password');
+    }).mouseout(function(){
+        $("#password").attr('type','password');
+    });
 
     // Update user info in Admin.html
     $('.user').click(function(){
@@ -83,4 +93,5 @@ jQuery(function(){
     // $('body').on('click','#test', function() {
     //
     // });
+    
 });

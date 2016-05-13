@@ -75,6 +75,22 @@ table {
     background-color: whitesmoke;
 }
 
+.password{
+    position: relative;
+}
+
+#password input[type="password"]{
+    /*padding-right: 30px;*/
+}
+
+.password .glyphicon  {
+    display:none;
+    right: 15px;
+    position: absolute;
+    top: 12px;
+    cursor:pointer;
+}
+
 /*#test {*/
     /*cursor: pointer;*/
 /*}*/

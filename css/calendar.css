@@ -91,6 +91,6 @@ table {
     cursor:pointer;
 }
 
-/*#test {*/
-    /*cursor: pointer;*/
-/*}*/
+.task {
+    cursor: pointer;
+}

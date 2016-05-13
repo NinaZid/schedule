@@ -17,8 +17,8 @@ TASKS:
 16. Completely changed the admin page structure. [✓]
 17. On the menu bar change the username into first and last name. [✓]
 18. Sort users in admin page by first name alphabetically. [✓]
-19. Add function that will get user by his id.
-20. User can change his info in 'Calendar.html'.
+19. Add function that will get user by his id. [✓]
+20. User can change his info in 'Calendar.html'. [✓]
 
 BUGS:
 1. Status prints on the form and on up-left corner. It should print only on the form. [✓]

@@ -38,7 +38,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                            <a href="calendar.html"><?php echo ucwords($_SESSION['first_name'] . ' ' . $_SESSION['last_name']); ?></a>
+                            <a href="calendar.html" id="user-menu"><?php echo ucwords($_SESSION['first_name'] . ' ' . $_SESSION['last_name']); ?></a>
                     </li>
                     <li>
                         <a href="#" data-toggle="modal" data-target="#myModal" class="user-info" >Change Info</a>
@@ -160,15 +160,16 @@
                     <h4 class="modal-title">User info</h4>
                 </div>
                 <div class="modal-body">
+                    <?php $info=getUserById($_SESSION['id']); ?>
                     <label>First Name:</label>
-                    <input type="text" class="form-text form-control" id="first-name" name="first-name">
+                    <input type="text" class="form-text form-control" id="first-name" name="first-name" value="<?php echo $info['firstName']; ?>">
                     <label>Last Name:</label>
-                    <input type="text" class="form-text form-control" id="last-name" name="last-name">
+                    <input type="text" class="form-text form-control" id="last-name" name="last-name" value="<?php echo $info['lastName']; ?>">
                     <label>Password:</label>
-                    <input type="password" class="form-text form-control" id="password" name="password">
+                    <input type="password" class="form-text form-control" id="password" name="password" value="<?php echo $info['password']; ?>">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-warning" data-dismiss="modal" name="update-btn" id="update-user">Update</button>
+                    <button type="button" class="btn btn-warning" data-dismiss="modal" name="update-btn" id="update-user-info">Update</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -176,8 +177,8 @@
         </div>
     </div>
 
-    <script src="js/scripts.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 </html>

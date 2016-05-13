@@ -96,6 +96,23 @@ function getUsers(){
     }
 }
 
+
+//Get user by id
+function getUserById($id){
+    $con = connection();
+    $data = [];
+
+    $result = $con->query("SELECT * FROM users WHERE id = $id");
+    while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+        $data[$id] = $row['id'];
+        $data['firstName'] = $row['first_name'];
+        $data['lastName'] = $row['last_name'];
+        $data['password'] = $row['password'];
+    }
+    return $data;
+}
+
+
 // Delete user
 function deleteUser($id){
     $con = connection();
@@ -104,7 +121,7 @@ function deleteUser($id){
     $result = $con->query("DELETE FROM users WHERE id = $id");
 }
 
-// Update user
+// Update user on admin.html
 function updateUser($id, $firstName, $lastName, $username, $password, $roleId){
     $con = connection();
 
@@ -118,4 +135,14 @@ function updateUser($id, $firstName, $lastName, $username, $password, $roleId){
         'password'=>$password,
         'role_id'=>$roleId,
     ));
+}
+
+//Update user on calendar
+function updateUserInfo($id, $firstName, $lastName, $password){
+    $con = connection();
+
+    $result = $con->query("UPDATE users SET first_name='$firstName', last_name='$lastName', password='$password'  WHERE id=$id");
+    $_SESSION['first_name'] = $firstName;
+    $_SESSION['last_name'] = $lastName;
+
 }

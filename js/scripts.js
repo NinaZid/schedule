@@ -21,15 +21,21 @@ jQuery(function(){
         $('#update-user').attr('data-id', info.id);
     });
 
-    // Update user info in Calendar.html
-    $('.user-info').click(function(){
-        var info=$(this).data('data');
-        $('#first-name').val(info.first_name);
-        $('#last-name').val(info.last_name);
-        $('#password').val(info.password);
 
-        $('#update-user').attr('data-id', info.id);
+    // Update user info in Calendar.html
+    $('#update-user-info').click(function(){
+        $.post('/schedule/update_user_info.php',
+            {
+                first_Name: $('#first-name').val(),
+                last_Name: $('#last-name').val(),
+                password: $('#password'). val(),
+            }, function(data){
+                console.log('user updated');
+                //update on menu
+                $('#user-menu').html($('#first-name').val()+' '+$('#last-name').val());
+            });
     });
+
 
     // Delete user
     $('#delete-user').click(function(){
@@ -44,7 +50,7 @@ jQuery(function(){
     });
 
 
-    // Update user info
+    // Update user info in admin.html
     $('#update-user').click(function(){
         var id=$(this).attr('data-id');
 
@@ -68,18 +74,19 @@ jQuery(function(){
         });
     });
 
-    // View user tasks
+
+   //  View user tasks by admin
     $('#view-user-tasks').click(function(){
         var id=$(this).attr('data-id');
-
-        $.post('/schedule/user.php',
-            {
-                id: id,
-                first_Name: $('#first-name').val(),
-                last_Name: $('#last-name').val()
-            }, function(){
-                window.location.replace("http://localhost/schedule/user.html?user="+id);
-                console.log(id);
-            });
+        window.location="/schedule/user.html?user="+id;
+        //$.post('/schedule/user.php',
+        //    {
+        //        id: id,
+        //        first_Name: $('#first-name').val(),
+        //        last_Name: $('#last-name').val()
+        //    }, function(){
+        //        window.location.replace("http://localhost/schedule/user.html?user="+id);
+        //        console.log(id);
+        //    });
     });
 });

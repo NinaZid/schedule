@@ -1,6 +1,8 @@
 <?php session_start(); ?>
 <?php include "user.php"; ?>
-
+<?php if ( $_SESSION['role_id'] != 1){
+header("Location: calendar.html");
+} ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -19,6 +19,8 @@ TASKS:
 18. Sort users in admin page by first name alphabetically. [✓]
 19. Add function that will get user by his id. [✓]
 20. User can change his info in 'Calendar.html'. [✓]
+21. Add security if admin tries to check user id which doesn`t exist. [✓]
+22. Add security if any normal user tries to check others users tasks.[✓]
 
 BUGS:
 1. Status prints on the form and on up-left corner. It should print only on the form. [✓]

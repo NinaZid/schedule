@@ -74,10 +74,13 @@ jQuery(function(){
         });
     });
 
-
    //  View user tasks by admin
     $('#view-user-tasks').click(function(data){
         var id=$(this).attr('data-id');
         window.location="/schedule/user.html?user="+id;
     });
+
+    // $('body').on('click','#test', function() {
+    //
+    // });
 });

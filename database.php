@@ -14,6 +14,33 @@ function insertTask($day, $hour, $priority, $name, $id){
     return $status;
 }
 
+// Delete task from DB
+function deleteTask($id){
+    $con = connection();
+
+    $result = $con->query("DELETE FROM tasks WHERE id = $id");
+    if(isset($result)){
+        $status = "Successfully deleted task.";
+    }
+    return $status;
+}
+
+// Update task in DB
+function updateTask($id, $day, $hour, $priority, $name, $userId){
+    $con = connection();
+
+    $result = $con->query("UPDATE tasks SET day='$day', hour='$hour', priority='$priority', name='$name', userId='$userId' WHERE id=$id");
+
+    echo json_encode(array(
+        'id'=>$id,
+        'day'=>$day,
+        'hour'=>$hour,
+        'priority'=>$priority,
+        'name'=>$name,
+        'userId'=>$userId,
+    ));
+}
+
 // Login with username and password executed from DB
 function login($username, $password){
     $con = connection();
@@ -62,6 +89,7 @@ function getTasksById($id){
         while($row = $result->fetch(PDO::FETCH_ASSOC)) {
             $data[$row['day'].'_'.$row['hour']]=$row;
         }
+//        var_dump($data);
     }
     return $data;
 }

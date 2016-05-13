@@ -40,12 +40,13 @@ td, th {
     box-shadow: 0px 0px 4px 4px rgba(0,0,0,0.02);
 }
 
-#addTaskBtn {
+#addTaskBtn, #updateTaskBtn, #deleteTaskBtn {
     width: 100%;
     background-color: whitesmoke;
+    margin-bottom: 5px;
 }
 
-#addTaskBtn:hover {
+#addTaskBtn:hover, #updateTaskBtn:hover:enabled, #deleteTaskBtn:hover:enabled {
     width: 100%;
     background-color: lightgrey;
 }
@@ -73,3 +74,7 @@ table {
 .hour {
     background-color: whitesmoke;
 }
+
+/*#test {*/
+    /*cursor: pointer;*/
+/*}*/

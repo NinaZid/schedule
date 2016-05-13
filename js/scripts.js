@@ -76,17 +76,8 @@ jQuery(function(){
 
 
    //  View user tasks by admin
-    $('#view-user-tasks').click(function(){
+    $('#view-user-tasks').click(function(data){
         var id=$(this).attr('data-id');
         window.location="/schedule/user.html?user="+id;
-        //$.post('/schedule/user.php',
-        //    {
-        //        id: id,
-        //        first_Name: $('#first-name').val(),
-        //        last_Name: $('#last-name').val()
-        //    }, function(){
-        //        window.location.replace("http://localhost/schedule/user.html?user="+id);
-        //        console.log(id);
-        //    });
     });
 });

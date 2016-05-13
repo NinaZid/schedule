@@ -7,7 +7,7 @@ if(isset($_POST['add_task'])){
     $hour = $_POST['hour_select'];
     $priority = $_POST['info_select'];
     $name = $_POST['text_description'];
-    $id = $_GET['user'];
-    
+    $id = $_SESSION['id'];
+
     $status = insertTask($day, $hour, $priority, $name, $id);
 }

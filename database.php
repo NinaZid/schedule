@@ -43,16 +43,6 @@ function login($username, $password){
     return $status;
 }
 
-if(isset($_POST['add_task'])){
-    $day = $_POST['day_select'];
-    $hour = $_POST['hour_select'];
-    $priority = $_POST['info_select'];
-    $name = $_POST['text_description'];
-    $id = $_SESSION['id'];
-
-    $status = insertTask($day, $hour, $priority, $name, $id);
-}
-
 // Register new user
 function register($firstName, $lastName, $username, $password){
     $con = connection();
@@ -96,7 +86,6 @@ function getUsers(){
     }
 }
 
-
 //Get user by id
 function getUserById($id){
     $con = connection();
@@ -111,7 +100,6 @@ function getUserById($id){
     }
     return $data;
 }
-
 
 // Delete user
 function deleteUser($id){
@@ -144,5 +132,4 @@ function updateUserInfo($id, $firstName, $lastName, $password){
     $result = $con->query("UPDATE users SET first_name='$firstName', last_name='$lastName', password='$password'  WHERE id=$id");
     $_SESSION['first_name'] = $firstName;
     $_SESSION['last_name'] = $lastName;
-
 }

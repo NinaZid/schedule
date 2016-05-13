@@ -114,7 +114,7 @@
             </thead>
             <tbody>
             <?php
-                $data=getTasksById($_SESSION['id']);
+                $data=getTasksById($_GET['user']);
                 foreach (range(9,17) as $hour){ ?>
             <tr class="">
                 <td class="hour"><?php echo $hour ?></td>

@@ -1,6 +1,10 @@
 <?php
 include "database.php";
 
+if(!getUserById($_GET['user'])){
+    header("Location: admin.html");
+}
+
 // Call the function for inserting task
 if(isset($_POST['add_task'])){
     $day = $_POST['day_select'];

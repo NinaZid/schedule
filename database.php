@@ -86,7 +86,7 @@ function getUsers(){
     }
 }
 
-//Get user by id
+// Get user by id
 function getUserById($id){
     $con = connection();
     $data = [];
@@ -125,7 +125,7 @@ function updateUser($id, $firstName, $lastName, $username, $password, $roleId){
     ));
 }
 
-//Update user on calendar
+// Update user on calendar
 function updateUserInfo($id, $firstName, $lastName, $password){
     $con = connection();
 

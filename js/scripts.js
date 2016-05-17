@@ -38,7 +38,7 @@ jQuery(function(){
             {
                 first_Name: $('#first-name').val(),
                 last_Name: $('#last-name').val(),
-                password: $('#password'). val(),
+                password: $('#password').val(),
             }, function(data){
                 console.log('user updated');
                 //update on menu
@@ -70,7 +70,7 @@ jQuery(function(){
                 first_Name: $('#first-name').val(),
                 last_Name: $('#last-name').val(),
                 username: $('#username').val(),
-                password: $('#password'). val(),
+                password: $('#password').val(),
                 role_id: $('#role').val()
             }, function(data){
             console.log('user updated');
@@ -84,7 +84,7 @@ jQuery(function(){
         });
     });
 
-   //  View user tasks by admin
+    //  View user tasks by admin
     $('#view-user-tasks').click(function(data){
         var id=$(this).attr('data-id');
         window.location="/schedule/user.html?user="+id;
@@ -94,34 +94,45 @@ jQuery(function(){
     var userId;
 
     // Fill form fields with task info
-     $('body').on('click','.task', function() {
-         var info=JSON.parse($(this).attr('data-data'));
-         console.log(info);
+    $('body').on('click','.task', function() {
+        var info=JSON.parse($(this).attr('data-data'));
+        console.log(info);
 
-         $('#day_select').val(info.day);
-         $('#hour_select').val(info.hour);
-         $('#info_select').val(info.priority);
-         $('#text_description').val(info.name);
-         taskId = info.id;
-         userId = info.user_id;
+        $('#day_select').val(info.day);
+        $('#hour_select').val(info.hour);
+        $('#info_select').val(info.priority);
+        $('#text_description').val(info.name);
+        taskId = info.id;
+        userId = info.user_id;
 
-         $('#updateTaskBtn').removeAttr('disabled');
-         $('#deleteTaskBtn').removeAttr('disabled');
-     });
+        $('#updateTaskBtn').removeAttr('disabled');
+        $('#deleteTaskBtn').removeAttr('disabled');
+    });
 
     // Update task info in calendar.html
     $('#updateTaskBtn').click(function(){
+        console.log('updating task ' + taskId);
         $.post('/schedule/update_task.php',{
-            $taskId: taskId,
-            $day: $('#day_select').val(),
-            $hour: $('#hour_select').val(),
-            $priority: $('#info_select').val(),
-            $name: $('#text_description').val(),
-            $userId: userId
+            task_id: taskId,
+            day: $('#day_select').val(),
+            hour: $('#hour_select').val(),
+            priority: $('#info_select').val(),
+            name: $('#text_description').val(),
+            user_id: userId
         }, function(data){
-            console.log(data);
+            console.log("successfully updated task " + taskId);
         });
     });
 
+    // Delete task in calendar.html
+    $('#deleteTaskBtn').click(function(){
+        console.log('deleting task ' + taskId);
+
+        $.post('/schedule/delete_task.php',{
+            task_id: taskId
+        }, function(){
+            console.log('task deleted');
+        });
+    });
 
 });

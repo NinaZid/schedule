@@ -38,7 +38,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                            <a href="calendar.html" id="user-menu"><?php echo ucwords($_SESSION['first_name'] . ' ' . $_SESSION['last_name']); ?></a>
+                        <a href="calendar.html" id="user-menu"><?php echo ucwords($_SESSION['first_name'] . ' ' . $_SESSION['last_name']); ?></a>
                     </li>
                     <li>
                         <a href="#" data-toggle="modal" data-target="#myModal" class="user-info" >Change Info</a>
@@ -67,7 +67,7 @@
                     <form role="form" action="" method="post" class="login-form">
                         <div class="form-group">
                           <label class="" for="">Day:</label>
-                            <select class="form-control" name="day_select" name="day_select">
+                            <select class="form-control" name="day_select" id="day_select">
                               <option value="1">Monday</option>
                               <option value="2">Tuesday</option>
                               <option value="3">Wednesday</option>

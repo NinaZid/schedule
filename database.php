@@ -29,15 +29,16 @@ function deleteTask($id){
 function updateTask($id, $day, $hour, $priority, $name, $userId){
     $con = connection();
 
-    $result = $con->query("UPDATE tasks SET day='$day', hour='$hour', priority='$priority', name='$name', userId='$userId' WHERE id=$id");
+    $sql = "UPDATE tasks SET day='$day', hour='$hour', priority='$priority', name='$name', user_id='$userId' WHERE id=$id";
+    $con->query($sql);
 
     echo json_encode(array(
-        'taskId'=>$id,
+        'task_id'=>$id,
         'day_select'=>$day,
         'hour_select'=>$hour,
         'info_select'=>$priority,
         'text_description'=>$name,
-        'userId'=>$userId,
+        'user_id'=>$userId
     ));
 }
 

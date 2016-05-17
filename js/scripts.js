@@ -10,7 +10,7 @@ jQuery(function(){
         $("#password").attr('type','password');
     });
 
-    // Update user info in Admin.html
+    // Fill modal fields with user info
     $('.user').click(function(){
         var info=JSON.parse($(this).attr('data-data'));
         console.log(info);
@@ -90,12 +90,38 @@ jQuery(function(){
         window.location="/schedule/user.html?user="+id;
     });
 
+    var taskId;
+    var userId;
+
+    // Fill form fields with task info
      $('body').on('click','.task', function() {
-         var id=$(this).attr('data-id');
+         var info=JSON.parse($(this).attr('data-data'));
+         console.log(info);
 
-         $.get('/schedule/get_task.php?id='+id, function(data){
+         $('#day_select').val(info.day);
+         $('#hour_select').val(info.hour);
+         $('#info_select').val(info.priority);
+         $('#text_description').val(info.name);
+         taskId = info.id;
+         userId = info.user_id;
 
-         });
+         $('#updateTaskBtn').removeAttr('disabled');
+         $('#deleteTaskBtn').removeAttr('disabled');
      });
+
+    // Update task info in calendar.html
+    $('#updateTaskBtn').click(function(){
+        $.post('/schedule/update_task.php',{
+            $taskId: taskId,
+            $day: $('#day_select').val(),
+            $hour: $('#hour_select').val(),
+            $priority: $('#info_select').val(),
+            $name: $('#text_description').val(),
+            $userId: userId
+        }, function(data){
+            console.log(data);
+        });
+    });
+
 
 });

@@ -67,7 +67,7 @@
                     <form role="form" action="" method="post" class="login-form">
                         <div class="form-group">
                           <label class="" for="">Day:</label>
-                            <select class="form-control" name="day_select">
+                            <select class="form-control" name="day_select" name="day_select">
                               <option value="1">Monday</option>
                               <option value="2">Tuesday</option>
                               <option value="3">Wednesday</option>
@@ -77,7 +77,7 @@
                         </div>
                         <div class="form-group">
                           <label class="" for="">Hour:</label>
-                            <select class="form-control" name="hour_select">
+                            <select class="form-control" name="hour_select" id="hour_select">
                               <option value="9">09</option>
                               <option value="10">10</option>
                               <option value="11">11</option>
@@ -91,7 +91,7 @@
                         </div>
                         <div class="form-group">
                           <label class="" for="">Priority:</label>
-                            <select class="form-control" name="info_select">
+                            <select class="form-control" name="info_select" id="info_select">
                               <option value="Danger">Danger</option>
                               <option value="Success">Success</option>
                               <option value="Info">Info</option>
@@ -99,8 +99,7 @@
                         </div>
                         <div class="form-group">
                             <label class="" for="">Task Name:</label>
-                            <input type="text" class="form-text form-control" id="form-text" name="text_description" required="required">
-                            <!--<input type="hidden" name="username" class="form-text form-control" value="<?php print $_POST['username'];?>">-->
+                            <input type="text" class="form-text form-control" id="text_description" name="text_description" required="required">
                         </div>
                         <p id="status"><?php echo $status ?></p>
                         <button type="submit" class="btn" name="add_task" id="addTaskBtn">Add Task</button>
@@ -137,6 +136,7 @@
                                    else
                                    { echo 'class="info task"';}
                                    echo ' data-id="'.$data[$day."_".$hour]['id'].'" ';
+                                   echo '  data-data=\''.json_encode($data[$day."_".$hour]).'\' ';
                                    }
                             ?> >
                       <?php

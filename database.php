@@ -32,11 +32,11 @@ function updateTask($id, $day, $hour, $priority, $name, $userId){
     $result = $con->query("UPDATE tasks SET day='$day', hour='$hour', priority='$priority', name='$name', userId='$userId' WHERE id=$id");
 
     echo json_encode(array(
-        'id'=>$id,
-        'day'=>$day,
-        'hour'=>$hour,
-        'priority'=>$priority,
-        'name'=>$name,
+        'taskId'=>$id,
+        'day_select'=>$day,
+        'hour_select'=>$hour,
+        'info_select'=>$priority,
+        'text_description'=>$name,
         'userId'=>$userId,
     ));
 }

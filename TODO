@@ -9,18 +9,18 @@ TASKS:
 8. Any normal user doesn`t have access to admin page. [✓]
 9. Admin doesen`t have access to calendar page. [✓]
 10. Add status information for successfully/failed added task. [✓]
-11. Add modal for $status and quit effect on $status for 5-10 seconds.
-12. Change 'Calendar.html' design.
-13. Remove fixed attribute for copyright status. [✓]
-14. Add options for mobile and tablet resolutions.
-15. Added new fields on register page for first and last name. [✓]
-16. Completely changed the admin page structure. [✓]
-17. On the menu bar change the username into first and last name. [✓]
-18. Sort users in admin page by first name alphabetically. [✓]
-19. Add function that will get user by his id. [✓]
-20. User can change his info in 'Calendar.html'. [✓]
-21. Add security if admin tries to check user id which doesn`t exist. [✓]
-22. Add security if any normal user tries to check others users tasks.[✓]
+11. Change 'Calendar.html' design. [✓]
+12. Remove fixed attribute for copyright status. [✓]
+13. Add options for mobile and tablet resolutions.
+14. Added new fields on register page for first and last name. [✓]
+15. Completely changed the admin page structure. [✓]
+16. On the menu bar change the username into first and last name. [✓]
+17. Sort users in admin page by first name alphabetically. [✓]
+18. Add function that will get user by his id. [✓]
+19. User can change his info in 'Calendar.html'. [✓]
+20. Add security if admin tries to check user id which doesn`t exist. [✓]
+21. Add security if any normal user tries to check others users tasks.[✓]
+22. Add clear button on 'Calendar.html' form.
 
 BUGS:
 1. Status prints on the form and on up-left corner. It should print only on the form. [✓]

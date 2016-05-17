@@ -112,6 +112,7 @@ jQuery(function(){
     // Update task info in calendar.html
     $('#updateTaskBtn').click(function(){
         console.log('updating task ' + taskId);
+
         $.post('/schedule/update_task.php',{
             task_id: taskId,
             day: $('#day_select').val(),

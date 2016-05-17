@@ -22,6 +22,7 @@ function deleteTask($id){
     if(isset($result)){
         $status = "Successfully deleted task.";
     }
+    header("Location: Calendar.html");
     return $status;
 }
 
@@ -40,6 +41,7 @@ function updateTask($id, $day, $hour, $priority, $name, $userId){
         'text_description'=>$name,
         'user_id'=>$userId
     ));
+    header("Location: Calendar.html");
 }
 
 // Login with username and password executed from DB

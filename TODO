@@ -27,3 +27,5 @@ BUGS:
 2. Huge bug on registering new user. Can`t register a new one. [✓]
 3. On deleting users, if the user doesn`t have tasks - can be deleted, but if the user has tasks - it is not deleted. [✓]
 4. On updating user info, the page must be reloaded with new changes. [✓]
+5. Fix delete and update function in "Calendar.html" because header on every function it's bad idea.
+6. Fix printing status for delete and update function in "Calendar.html".

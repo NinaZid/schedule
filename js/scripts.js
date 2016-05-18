@@ -141,4 +141,11 @@ jQuery(function(){
         });
     });
 
+    // Clear button in calendar/admin page
+    $('#clearFormBtn').click(function(e) {
+        $('#updateTaskBtn').attr('disabled','disabled');
+        $('#deleteTaskBtn').attr('disabled','disabled');
+        $("#status").remove();
+    });
+
 });

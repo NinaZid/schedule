@@ -3,7 +3,7 @@ TASKS:
 2. Check if user have any tasks for itself when the function 'ReadTasksById' it's called [✓]
 3. Add new page 'admin.html' that can be showed only for admins, not normal users. [✓]
 4. Admin should see all users in his page by first and last name and by clicking on them it should show him a modal with buttons for edit, delete, view the users tasks and close button. [✓]
-5. Admin can edit any user`s tasks.
+5. Admin can edit any user`s tasks. [✓]
 6. Admin can change the info of any user. [✓]
 7. Admin can delete any user. [✓]
 8. Any normal user doesn`t have access to admin page. [✓]
@@ -11,7 +11,7 @@ TASKS:
 10. Add status information for successfully/failed added task. [✓]
 11. Change 'Calendar.html' design. [✓]
 12. Remove fixed attribute for copyright status. [✓]
-13. Add options for mobile and tablet resolutions.
+13. Add options for mobile and tablet resolutions. [✓]
 14. Added new fields on register page for first and last name. [✓]
 15. Completely changed the admin page structure. [✓]
 16. On the menu bar change the username into first and last name. [✓]
@@ -29,5 +29,5 @@ BUGS:
 2. Huge bug on registering new user. Can`t register a new one. [✓]
 3. On deleting users, if the user doesn`t have tasks - can be deleted, but if the user has tasks - it is not deleted. [✓]
 4. On updating user info, the page must be reloaded with new changes. [✓]
-5. Fix delete and update function in "Calendar.html" because header on every function it's bad idea.
+5. Fix delete and update function in "Calendar.html" because header on every function it's bad idea. [✓]
 6. Fix printing status for delete and update function in "Calendar.html". [✓]

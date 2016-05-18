@@ -40,13 +40,13 @@ td, th {
     box-shadow: 0px 0px 4px 4px rgba(0,0,0,0.02);
 }
 
-#addTaskBtn, #updateTaskBtn, #deleteTaskBtn {
+#addTaskBtn, #updateTaskBtn, #deleteTaskBtn, #clearFormBtn {
     width: 100%;
     background-color: whitesmoke;
     margin-bottom: 5px;
 }
 
-#addTaskBtn:hover, #updateTaskBtn:hover:enabled, #deleteTaskBtn:hover:enabled {
+#addTaskBtn:hover, #updateTaskBtn:hover:enabled, #deleteTaskBtn:hover:enabled, #clearFormBtn:hover {
     width: 100%;
     background-color: lightgrey;
 }

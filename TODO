@@ -21,6 +21,8 @@ TASKS:
 20. Add security if admin tries to check user id which doesn`t exist. [✓]
 21. Add security if any normal user tries to check others users tasks.[✓]
 22. Add clear button on 'Calendar.html' form.
+23. Users can update its tasks. [✓]
+24. Users can delete its tasks. [✓]
 
 BUGS:
 1. Status prints on the form and on up-left corner. It should print only on the form. [✓]

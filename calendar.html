@@ -101,7 +101,7 @@
                             <label class="" for="">Task Name:</label>
                             <input type="text" class="form-text form-control" id="text_description" name="text_description" required="required">
                         </div>
-                        <p id="status"><?php echo $status ?></p>
+                        <p id="status"><?php echo $status; if(isset($_SESSION['status'])) {echo $_SESSION['status'];  $_SESSION['status']="";}  ?></p>
                         <button type="submit" class="btn" name="add_task" id="addTaskBtn">Add Task</button>
                         <button type="submit" class="btn" name="update_task" id="updateTaskBtn" disabled>Update Task</button>
                         <button type="submit" class="btn" name="delete_task" id="deleteTaskBtn" disabled>Delete Task</button>

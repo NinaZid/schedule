@@ -21,9 +21,11 @@ function deleteTask($id){
     $result = $con->query("DELETE FROM tasks WHERE id = $id");
     if(isset($result)){
         $status = "Successfully deleted task.";
+        $_SESSION['status']=$status;
+
+
     }
-    header("Location: Calendar.html");
-    return $status;
+    //return $status;
 }
 
 // Update task in DB
@@ -41,7 +43,9 @@ function updateTask($id, $day, $hour, $priority, $name, $userId){
         'text_description'=>$name,
         'user_id'=>$userId
     ));
-    header("Location: Calendar.html");
+    $status = "Successfully updated task.";
+    $_SESSION['status']=$status;
+
 }
 
 // Login with username and password executed from DB

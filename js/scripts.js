@@ -110,7 +110,8 @@ jQuery(function(){
     });
 
     // Update task info in calendar.html
-    $('#updateTaskBtn').click(function(){
+    $('#updateTaskBtn').click(function(e){
+        e.preventDefault();
         console.log('updating task ' + taskId);
 
         $.post('/schedule/update_task.php',{
@@ -121,17 +122,21 @@ jQuery(function(){
             name: $('#text_description').val(),
             user_id: userId
         }, function(data){
+            window.location=window.location.href;
             console.log("successfully updated task " + taskId);
         });
     });
 
     // Delete task in calendar.html
-    $('#deleteTaskBtn').click(function(){
+    $('#deleteTaskBtn').click(function(e){
+        e.preventDefault();
+
         console.log('deleting task ' + taskId);
 
         $.post('/schedule/delete_task.php',{
             task_id: taskId
-        }, function(){
+        }, function(data){
+            window.location=window.location.href;
             console.log('task deleted');
         });
     });

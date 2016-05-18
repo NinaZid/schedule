@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "database.php";
 
 if(isset($_POST['task_id']) && (isset($_POST['day'])) && (isset($_POST['hour'])) && (isset($_POST['priority'])) && (isset($_POST['name'])) && (isset($_POST['user_id'])))

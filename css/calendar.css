@@ -94,3 +94,13 @@ table {
 .task {
     cursor: pointer;
 }
+
+@media only screen and (max-width: 480px){
+
+    #enterTasks {
+        width: 65%;
+        margin-left: 17%;
+        margin-right: 17%;
+    }
+}
+

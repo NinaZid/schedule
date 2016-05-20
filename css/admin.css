@@ -68,3 +68,9 @@ body {
     top: 12px;
     cursor:pointer;
 }
+
+@media only screen and (max-width: 768px){
+    .user {
+        width: 45%;
+      }
+}
